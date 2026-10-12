@@ -39,10 +39,11 @@ const faqs = getAllFaqs();
           title={seo.h1 ?? 'Aion 2 Cheats FAQ — Safety, Setup & Support'}
           desc="Is the Aion 2 bot bannable? Setup, anti-cheat updates, Steam and PURPLE compatibility, and support for cheats and hacks."
           titleId="faq-page-title"
+          level={1}
         />
       </div>
     </div>
   </section>
 
-  <SiteFaqSection items={faqs} variant="full" titleId="faq-page-list" />
+  <SiteFaqSection items={faqs} variant="full" titleId="faq-page-list" hideHeader />
 </BaseLayout>

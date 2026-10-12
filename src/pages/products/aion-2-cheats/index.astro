@@ -55,8 +55,10 @@ function cardLabel(product: (typeof productPages)[number]) {
       <Breadcrumbs items={breadcrumbs} />
 
       <div class="mt-6 max-w-3xl space-y-3">
-        <h1 class="text-3xl font-bold uppercase md:text-4xl">{t.products.title}</h1>
-        <p class="text-lg text-muted-foreground">{t.products.subtitle}</p>
+        <h1 class="text-3xl font-bold uppercase md:text-4xl">{seo.h1 ?? t.products.title}</h1>
+        <p class="text-lg text-muted-foreground">
+          {seo.h1 ?? t.products.title}. {t.products.subtitle}
+        </p>
       </div>
 
       <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
