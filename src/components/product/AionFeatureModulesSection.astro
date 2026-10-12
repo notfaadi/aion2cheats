@@ -1,0 +1,67 @@
+---
+import { aionCheatFeatureModules } from '../../data/aionFeatureModules';
+import SectionHeader from '../SectionHeader.astro';
+import ProductFeatureModuleCard from './ProductFeatureModuleCard.astro';
+
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  desc?: string;
+  titleId?: string;
+  class?: string;
+  maxFeatures?: number;
+  /** When true, omit outer page padding (parent already has max-w-6xl px-5). */
+  nested?: boolean;
+}
+
+const {
+  eyebrow = 'Modules',
+  title = 'Full module breakdown',
+  desc = 'Six operator categories—toggle and tune each group in the portal. Tier access varies; Elite includes the full stack.',
+  titleId = 'aion-feature-modules-title',
+  class: className,
+  maxFeatures = 4,
+  nested = false,
+} = Astro.props;
+
+const Tag = nested ? 'div' : 'section';
+---
+
+<Tag
+  id={nested ? undefined : 'feature-modules'}
+  class:list={[
+    nested ? 'pt-14 md:pt-16' : 'border-t border-border py-12 md:py-16',
+    className,
+  ]}
+  aria-labelledby={titleId}
+>
+  {
+    nested ? (
+      <>
+        <SectionHeader eyebrow={eyebrow} title={title} desc={desc} titleId={titleId} />
+        <ul class="mt-10 grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3">
+          {
+            aionCheatFeatureModules.map((module) => (
+              <li class="min-h-0">
+                <ProductFeatureModuleCard module={module} maxFeatures={maxFeatures} />
+              </li>
+            ))
+          }
+        </ul>
+      </>
+    ) : (
+      <div class="mx-auto max-w-6xl px-5">
+        <SectionHeader eyebrow={eyebrow} title={title} desc={desc} titleId={titleId} />
+        <ul class="mt-10 grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3">
+          {
+            aionCheatFeatureModules.map((module) => (
+              <li class="min-h-0">
+                <ProductFeatureModuleCard module={module} maxFeatures={maxFeatures} />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    )
+  }
+</Tag>
