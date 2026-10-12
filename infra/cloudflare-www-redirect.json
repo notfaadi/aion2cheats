@@ -1,0 +1,14 @@
+{
+  "description": "Zone redirect rule: www.aion2cheat.org → aion2cheat.org (301). Recreate via Cloudflare API if missing.",
+  "zone_id": "cb57d63727d4a5ed76c2a3c0ec876c6a",
+  "phase": "http_request_dynamic_redirect",
+  "ruleset_name": "www to apex redirect",
+  "rule": {
+    "ref": "www_to_apex_301",
+    "expression": "http.host eq \"www.aion2cheat.org\"",
+    "action": "redirect",
+    "status_code": 301,
+    "target_url_expression": "concat(\"https://aion2cheat.org\", http.request.uri.path)",
+    "preserve_query_string": true
+  }
+}
