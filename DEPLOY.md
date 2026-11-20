@@ -32,7 +32,7 @@ git push -u github main
 3. If the domain is already on Cloudflare, DNS records are added automatically (proxied orange cloud).
 4. Prefer **aion2cheat.org** (non-www) as canonical. **www** must **301** to apex (SEO tools check this at the edge):
    - Cloudflare **Redirect Rules** (zone): `http.host eq "www.aion2cheat.org"` → `https://aion2cheat.org${uri}` with status **301** (Pages `_redirects` host rules do not apply to custom domains).
-   - `public/_redirects` keeps path/checkout rules only.
+   - `public/_redirects` is empty on Workers (only relative URLs allowed); checkout uses Astro `redirects` in `astro.config.mjs`.
 5. Wait for SSL **Active**, then verify:
    - https://aion2cheat.org/
    - https://aion2cheat.org/robots.txt

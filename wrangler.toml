@@ -1,6 +1,6 @@
 # Astro static site: `npm run build` → dist, then `npx wrangler deploy` (Workers static assets).
 # Pages Git alternative: build command `npm run build`, output `dist` (no wrangler deploy).
-name = "aion2cheat"
+name = "aion2cheats"
 compatibility_date = "2025-04-01"
 
 [build]
