@@ -61,6 +61,10 @@ Requires `wrangler login` once.
 
 If the dashboard **deploy command** is `npx wrangler deploy`, keep it — the repo’s `wrangler.toml` defines the build step and asset directory. Do **not** run `wrangler deploy` without building first unless that file is present.
 
+### Workers custom domain (`aion2cheat.org`) — DNS error 100117
+
+If attach fails with *“already has externally managed DNS records”*, delete old **A/CNAME** for apex (and detach the name from any old **Pages** project), then add **Custom domain** on Worker **aion2cheats**. Full steps: **[docs/cloudflare-custom-domain-dns.md](docs/cloudflare-custom-domain-dns.md)**.
+
 ## Local development
 
 ```bash
