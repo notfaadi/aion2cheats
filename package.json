@@ -13,7 +13,8 @@
     "astro": "astro",
     "optimize:images": "node scripts/optimize-images.mjs",
     "fetch:aion2-images": "node scripts/fetch-aion2-images.mjs",
-    "generate:blog-images": "node scripts/generate-blog-images.mjs"
+    "generate:blog-images": "node scripts/generate-blog-images.mjs",
+    "deploy": "wrangler deploy"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "terser": "^5.49.0",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "wrangler": "^4.165.0"
   }
 }

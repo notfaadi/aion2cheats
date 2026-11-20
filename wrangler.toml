@@ -1,4 +1,10 @@
-# Cloudflare Pages — connect GitHub repo or run: npx wrangler pages deploy dist --project-name=aion2cheat
+# Astro static site: `npm run build` → dist, then `npx wrangler deploy` (Workers static assets).
+# Pages Git alternative: build command `npm run build`, output `dist` (no wrangler deploy).
 name = "aion2cheat"
-pages_build_output_dir = "dist"
 compatibility_date = "2025-04-01"
+
+[build]
+command = "npm run build"
+
+[assets]
+directory = "./dist"

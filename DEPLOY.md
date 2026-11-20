@@ -42,12 +42,24 @@ Checkout redirects use `public/_redirects` and Astro `redirects` in `astro.confi
 
 ### CLI deploy (without Git hook)
 
+`wrangler.toml` runs `npm run build` and uploads `./dist` when you use Workers deploy:
+
+```bash
+npx wrangler deploy
+```
+
+Legacy Pages CLI (equivalent):
+
 ```bash
 npm run build
 npx wrangler pages deploy dist --project-name=aion2cheat
 ```
 
 Requires `wrangler login` once.
+
+### Cloudflare build command
+
+If the dashboard **deploy command** is `npx wrangler deploy`, keep it — the repo’s `wrangler.toml` defines the build step and asset directory. Do **not** run `wrangler deploy` without building first unless that file is present.
 
 ## Local development
 
